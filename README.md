@@ -8,3 +8,5 @@ For ss and other info: https://www.reddit.com/r/FirefoxCSS/comments/nts0yl/proto
 Displays best with proton dark compact mode
 
 How to use userChrome.css: https://www.userchrome.org/how-create-userchrome-css.html
+
+user.js file is optional. It is used to update about:config preferences.
