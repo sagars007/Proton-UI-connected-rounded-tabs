@@ -1,0 +1,364 @@
+   /*bookmarks bar color*/
+  /*#PersonalToolbar{
+	background-color: rgb(43, 42, 51, 0.60) !important;
+	} */
+  
+  /*for hiding bookmarks bar*/
+  #PersonalToolbar{
+	--uc-bm-height: 20px; /* Might need to adjust if the toolbar has other buttons */
+	--uc-bm-padding: 4px; /* Vertical padding to be applied to bookmarks */
+	--uc-autohide-toolbar-delay: 250ms; /* The toolbar is hidden after delaytime */
+	
+	/* 0deg = "show" ; 90deg = "hide" ;  Set the following to control when bookmarks are shown */
+	--uc-autohide-toolbar-focus-rotation: 90deg; /* urlbar is focused */
+	--uc-autohide-toolbar-hover-rotation: 0deg; /* cursor is over the toolbar area */
+  }
+  
+  :root[uidensity="compact"] #PersonalToolbar{ --uc-bm-padding: 1px }
+  :root[uidensity="touch"] #PersonalToolbar{ --uc-bm-padding: 7px }
+  
+  #PersonalToolbar:not([customizing]){
+	position: relative;
+	margin-bottom: calc(0px - var(--uc-bm-height) - 2 * var(--uc-bm-padding));
+	transform: rotateX(90deg);
+	transform-origin: top;
+	transition: transform 135ms linear var(--uc-autohide-toolbar-delay) !important;
+	z-index: 1;
+  }
+  
+  #PlacesToolbarItems > .bookmark-item{ padding-block: var(--uc-bm-padding) !important; }
+  
+  #nav-bar:focus-within + #PersonalToolbar{
+	transition-delay: 100ms !important;
+	transform: rotateX(var(--uc-autohide-toolbar-focus-rotation,0));
+  }
+  
+  #navigator-toolbox:hover > #PersonalToolbar{
+	transition-delay: 100ms !important;
+	transform: rotateX(var(--uc-autohide-toolbar-hover-rotation,0));
+  }
+  
+  #navigator-toolbox:hover > #nav-bar:focus-within + #PersonalToolbar {  
+	transform: rotateX(0);
+  }
+
+  #navigator-toolbox{
+	border-bottom: none !important;
+}
+
+.tab-background {
+	border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  margin: 0px !important;
+}
+.tab-stack {
+	margin-top: 1px;
+  }
+
+/* ---Tabs/Tab Bar height--- */
+:root {
+	--tab-min-height: 28px !important; 
+	
+   }
+   :root #tabbrowser-tabs {
+	--tab-min-height: 28px !important; /* needs to be the same as above under :root */
+	
+   } 
+   /*remove space before 1st tab*/
+   .titlebar-spacer[type="pre-tabs"] {
+    display: none !important;
+}  
+
+
+   /* Fixing toolbar buttons (close/min/max) due to shoretened Menu Bar height */
+   #toolbar-menubar .titlebar-button{ padding-block: 0px !important; }  
+
+   .tab-background[selected="true"] {
+	background: linear-gradient(to bottom, transparent 2px, var(--toolbar-bgcolor) 2px,var(--toolbar-bgcolor) 100%), linear-gradient(to right, #9f1aff, #9f1aff, #8a46ff, #765dff, #5d7dff, #3e8cff, #1c99ff, #00a5ff, #00b4ff, #00c3ff, #00d0ff, #00ddff) !important; 
+  }
+/* grey #42414D */
+/** Fix tab icon (sound icon was replacing site icon) */
+/* Always show tab icon */
+.tab-icon-image {
+	opacity: 1 !important;
+  }
+  /* Move tab sound icon to the top left */
+  .tab-icon-overlay {
+	/* top - left */
+	top: -6px !important;
+	inset-inline-end: 6px !important;
+	width: 14px !important;
+	height: 14px !important;
+	padding: 1px !important;
+	/* background */
+	stroke: var(--tab-icon-overlay-stroke, black) !important;
+	background: var(--tab-icon-overlay-stroke, black) !important;
+	fill-opacity: 0.6 !important;
+	/* icon color */
+	color: #00DDFF !important;
+	/* circle */
+	border-radius: 10px !important;
+  }
+  .tab-icon-overlay:hover {
+	/* background */
+	fill-opacity: 1 !important;
+  }
+  
+  /** Remove tab close button */
+  .tab-close-button {
+	display: none;
+	background: none !important;
+  }
+  /* Fix mask size */
+  .tabbrowser-tab {
+	--tab-label-mask-size: 1em !important;
+  }
+
+  /* show close tab button on tab hover but not on pinned tab */
+  .tabbrowser-tab:hover .tab-close-button { 
+      display: -moz-box !important; 
+  }
+
+  .tabbrowser-tab[pinned]:hover .tab-close-button { 
+	display: none !important; 
+}
+
+/* green dot on pinned tab for site update notif */
+.tabbrowser-tab > .tab-stack >
+ .tab-content[pinned][titlechanged]:not([selected="true"]){
+  background-position: bottom !important;
+}
+
+/* black tab shadow ms edge style */ 
+.tabbrowser-tab[visuallyselected="true"] > .tab-stack > .tab-background {
+    box-shadow: 0 0 4px black !important;
+  }
+
+/*container tabs indicator customization. Line Position:bottom Default style */
+.tab-context-line{
+	-moz-box-ordinal-group: 2;
+	margin-block: 0 !important;
+	margin-left: 16px !important;
+	margin-right: 16px !important;
+  }
+
+/* container tabs indicator customization - different style. this will give rounded borders if tab border radius is there 
+and covers entire bottom outline of tab. Line Position:bottom */
+/*  .tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
+    display: none;
+}
+
+.tabbrowser-tab[class*="identity-color-"] .tab-background {
+    background: linear-gradient(0, var(--identity-tab-color) 1px, transparent 0);
+}
+
+.tabbrowser-tab[selected="true"][class*="identity-color-"] .tab-background {
+    background: linear-gradient(to bottom, transparent 2px, var(--toolbar-bgcolor) 2px,var(--toolbar-bgcolor) 95%,var(--identity-tab-color) 1px), linear-gradient(to right, #9f1aff, #9f1aff, #8a46ff, #765dff, #5d7dff, #3e8cff, #1c99ff, #00a5ff, #00b4ff, #00c3ff, #00d0ff, #00ddff) !important;
+} */ 
+
+/*prevent tab overflow to expand causing height changes */
+#tabbrowser-tabs,
+#tabbrowser-tabs > .tabbrowser-arrowscrollbox{
+  min-height: unset !important;
+}
+#TabsToolbar{ --toolbarbutton-inner-padding:2.5px !important; }
+
+
+menupopup > menuitem,
+menupopup > menu
+ {
+	border-radius: 4px !important;
+	margin-left: 8px !important;
+	margin-right: 8px !important;
+}
+
+
+/** Menu top items border and padding */
+/* context menu top left button padding */
+menugroup > menuitem:first-child {  
+	border-radius: 4px !important;
+	padding-left: 8px !important;
+}
+/* context menu top right button padding */
+menugroup > menuitem:last-child {  
+	border-radius: 4px !important;
+	padding-right: 8px !important;
+
+}
+/* context menu top buttons radius */
+menugroup > menuitem {
+	border-radius: 4px !important;
+}
+menugroup > menuitem > hbox > image {  
+  border-radius: 4px !important;
+}
+/* for menu item with submenu  */
+.panel-header > .subviewbutton {
+	border-radius: 4px !important;
+  }
+
+/* context menu padding */
+menupopup > menuitem,
+menupopup > menu {
+  padding-block: 0.15em !important;
+}
+/* menu item padding */
+toolbarbutton {
+  --arrowpanel-menuitem-padding: 2px 8px;
+  
+}
+
+#urlbar-background,#urlbar{ 
+
+	border-radius: 4px !important;
+	border: transparent !important;
+  }
+  
+  #urlbar[focused=true] #urlbar-background{ 
+	margin-bottom: 2px !important;
+	margin-top: 2px !important;
+	margin-left: 2px !important;
+	margin-right: 2px !important; }
+
+	#urlbar[open=true] #urlbar-background{ 
+		margin-bottom: 2px !important;
+		margin-top: 2px !important;
+		margin-left: 2px !important;
+		margin-right: 2px !important; }
+ 
+  
+  #urlbar[focused=true] {
+	background-image: linear-gradient(to right, #9f1aff, #9f1aff, #8a46ff, #765dff, #5d7dff, #3e8cff, #1c99ff, #00a5ff, #00b4ff, #00c3ff, #00d0ff, #00ddff) !important;
+  }
+  
+  #urlbar[open=true] {
+	background-image: linear-gradient(to right, #9f1aff, #9f1aff, #8a46ff, #765dff, #5d7dff, #3e8cff, #1c99ff, #00a5ff, #00b4ff, #00c3ff, #00d0ff, #00ddff) !important;
+  }
+
+/*toolbar buttons*/
+.toolbarbutton-1 {
+	fill: #9f1aff !important;
+  }
+  
+  .toolbarbutton-1:hover {
+	fill: #00DDFF !important;
+  }
+  
+  .toolbarbutton-1[open="true"] {
+	fill: #00DDFF !important;
+  }
+  
+  .toolbarbutton-1[disabled] {
+	fill: #652299 !important;
+  }
+   
+  /*contextmenu right-click pg*/
+  #context-navigation menuitem {
+	color: #9f1aff !important;
+  }
+
+  #context-navigation menuitem[disabled] {
+	color: #652299 !important;
+  }
+
+  #context-navigation menuitem:hover {
+	color: #00DDFF !important;
+  }
+
+  #context-navigation menuitem:hover[disabled] {
+	color: #652299 !important;
+  } 
+
+  .close-icon:hover {
+	fill: #FF0000 !important;	
+  }  
+
+  
+
+/* sidebar bgcolor to proton dark */
+  #sidebar-header,#sidebar-search-container,#bookmarks-view-children,#historyTree {
+	background-color: #2b2a33 !important;
+	-moz-appearance:none!important;
+	
+  }
+  #bookmarksPanel, #history-panel {
+	background-color: #2b2a33 !important;
+  }
+/* synced tabs sidebar bgcolor */  
+  #template-container.content-scrollable{
+	background-color: #2b2a33 !important;
+  }
+
+  .sidebar-splitter {
+	display: none !important
+  }
+/*toolbar hamburger menu gradient color*/
+  #appMenu-fxa-separator
+  {
+	border-image: 1 1 1 1 linear-gradient(to right, #9f1aff, #9f1aff, #8a46ff, #765dff, #5d7dff, #3e8cff, #1c99ff, #00a5ff, #00b4ff, #00c3ff, #00d0ff, #00ddff) !important;
+  }
+
+/*link hover tooltip custom*/
+#statuspanel-label {
+	-moz-appearance: none !important;
+	  color: #fff !important;
+	  background-color: #2B2A33 !important;
+	border: 1px solid transparent !important;
+	border-image: 1 1 0 0 linear-gradient(to right, #9f1aff, #9f1aff, #8a46ff, #765dff, #5d7dff, #3e8cff, #1c99ff, #00a5ff, #00b4ff, #00c3ff, #00d0ff, #00ddff) !important;
+  
+  }
+ 
+
+/* tab burst color */
+  .tab-loading-burst[bursting]::before {
+    fill: #00DDFF !important
+}
+/* To remove tab burst animation - uncomment below code */
+/*.tab-loading-burst {
+  display: none !important;
+}*/
+
+/* tab loading icon color */
+.tab-throbber::before {
+	fill: #00DDFF !important;
+	opacity: 1 !important;
+	}
+
+/*min max close rounded buttons and colors */
+	.titlebar-button {
+		border-radius: 4px !important;
+		padding-left: 12px !important;
+		padding-right: 12px !important;
+	}
+
+	:root[sizemode=fullscreen]
+	#minimize-button,
+	#restore-button,
+	#close-button
+	{
+		border-radius: 4px !important;
+		stroke: #00DDFF !important;
+		
+	}
+	:root[sizemode=fullscreen] #close-button:hover
+	{
+		stroke: #FFF !important;	
+	}
+
+	.titlebar-buttonbox-container .titlebar-button .toolbarbutton-icon {
+		stroke: #00DDFF;
+	}
+	.titlebar-buttonbox-container .titlebar-button.titlebar-close:hover .toolbarbutton-icon {
+		stroke: #FFF;
+	}
+
+	
+/*tooltip dark theme*/
+/*tooltip {
+	-moz-appearance: none !important;
+	  color: #fff !important;
+	  background-color: #2B2A33 !important;
+	border: 1px solid transparent !important;
+	border-image: 1 1 1 1 linear-gradient(to right, #9f1aff, #9f1aff, #8a46ff, #765dff, #5d7dff, #3e8cff, #1c99ff, #00a5ff, #00b4ff, #00c3ff, #00d0ff, #00ddff) !important;
+  
+  }*/
