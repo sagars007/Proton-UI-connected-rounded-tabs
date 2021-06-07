@@ -138,8 +138,8 @@
 .tab-context-line{
 	-moz-box-ordinal-group: 2;
 	margin-block: 0 !important;
-	margin-left: 12px !important;
-	margin-right: 12px !important;
+	margin-left: 10px !important;
+	margin-right: 10px !important;
   }
 
 /* container tabs indicator customization - different style. this will give rounded borders if tab border radius is there 
