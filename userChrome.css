@@ -240,6 +240,21 @@ toolbarbutton {
 	background-image: linear-gradient(to right, #9f1aff, #9f1aff, #8a46ff, #765dff, #5d7dff, #3e8cff, #1c99ff, #00a5ff, #00b4ff, #00c3ff, #00d0ff, #00ddff) !important;
   }
 
+#urlbar{
+	min-height: 26px !important; 
+	margin-block: 0px 0px!important;
+}
+#urlbar-background{
+	margin-block: 0px 0px !important;
+}
+#urlbar-container{
+	margin-block: 0px -4px;
+}
+#searchbar {
+	min-height: 26px !important;
+	margin-block: -4px !important;
+}
+
 /*toolbar buttons*/
 .toolbarbutton-1 {
 	fill: #9f1aff !important;
@@ -357,20 +372,6 @@ toolbarbutton {
 		stroke: #FFF;
 	}
 
-#urlbar{
-	min-height: 26px !important; 
-	margin-block: 0px 0px!important;
-}
-#urlbar-background{
-	margin-block: 0px 0px !important;
-}
-#urlbar-container{
-	margin-block: 0px -4px;
-}
-#searchbar {
-	min-height: 26px !important;
-	margin-block: -4px !important;
-}
 
 /*bookmarks star in url bar removed */
 /*#star-button-box { display: none !important; } */
