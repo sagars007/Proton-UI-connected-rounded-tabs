@@ -142,6 +142,11 @@
 	margin-right: 10px !important;
   }
 
+/*container tab label color when selected */
+  .tabbrowser-tab[selected="true"][class*="identity-color-"] .tab-label {
+    color: var(--identity-tab-color) !important;
+}
+
 /* container tabs indicator customization - different style. this will give rounded borders if tab border radius is there 
 and covers entire bottom outline of tab. Line Position:bottom */
 /*  .tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
@@ -352,7 +357,24 @@ toolbarbutton {
 		stroke: #FFF;
 	}
 
-	
+#urlbar{
+	min-height: 26px !important; 
+	margin-block: 0px 0px!important;
+}
+#urlbar-background{
+	margin-block: 0px 0px !important;
+}
+#urlbar-container{
+	margin-block: 0px -4px;
+}
+#searchbar {
+	min-height: 26px !important;
+	margin-block: -4px !important;
+}
+
+/*bookmarks star in url bar removed */
+/*#star-button-box { display: none !important; } */
+
 /*tooltip dark theme*/
 /*tooltip {
 	-moz-appearance: none !important;
