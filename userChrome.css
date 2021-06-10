@@ -372,16 +372,17 @@ toolbarbutton {
 		stroke: #FFF;
 	}
 
-
-/*bookmarks star in url bar removed */
-/*#star-button-box { display: none !important; } */
-
 /*tooltip dark theme*/
-/*tooltip {
+tooltip {
 	-moz-appearance: none !important;
 	  color: #fff !important;
 	  background-color: #2B2A33 !important;
 	border: 1px solid transparent !important;
 	border-image: 1 1 1 1 linear-gradient(to right, #9f1aff, #9f1aff, #8a46ff, #765dff, #5d7dff, #3e8cff, #1c99ff, #00a5ff, #00b4ff, #00c3ff, #00d0ff, #00ddff) !important;
   
-  }*/
+  }
+
+/*bookmarks star in url bar removed */
+/*#star-button-box { display: none !important; } */
+
+
