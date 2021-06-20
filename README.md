@@ -1,5 +1,6 @@
 # Connected rounded tabs with gradient indicators - Proton UI (Firefox)
 ![screenshot](screenshot/proton-ui-gradient-rounded-tabs-display.png)
+![screenshot](screenshot/download_popup_dark.png)
 
 Firefox Proton UI minimal changes with nav-bar-connected rounded tabs, reduced compact mode, nightly color gradient accents etc..
 
