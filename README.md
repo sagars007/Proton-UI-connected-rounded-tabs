@@ -2,7 +2,8 @@
 ![screenshot](screenshot/proton-ui-gradient-rounded-tabs-display.png)
 ![screenshot](screenshot/download_popup_dark.png)
 
-Firefox Proton UI minimal changes with nav-bar-connected rounded tabs, reduced compact mode, nightly color gradient accents etc.. Now with download popup & appPicker in dark mode!
+Firefox Proton UI minimal changes with nav-bar-connected rounded tabs, reduced compact mode, nightly color gradient accents etc.. 
+Now with download popup & appPicker in dark mode!
 
 For ss and other info: https://www.reddit.com/r/FirefoxCSS/comments/nts0yl/proton_ui_subtle_changes_with/ 
 
