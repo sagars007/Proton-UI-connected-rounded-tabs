@@ -1,9 +1,9 @@
-   /*bookmarks bar color*/
+   /*bookmarks bar color - make the bar translucent */
   /*#PersonalToolbar{
 	background-color: rgb(43, 42, 51, 0.60) !important;
 	} */
   
-  /*for hiding bookmarks bar*/
+  /*Bookmarks bar show on hover*/
   #PersonalToolbar{
 	--uc-bm-height: 20px; /* Might need to adjust if the toolbar has other buttons */
 	--uc-bm-padding: 4px; /* Vertical padding to be applied to bookmarks */
@@ -49,26 +49,34 @@
 .tab-background {
 	border-bottom-left-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
-  margin: 0px !important;
+  margin-block: 2px 0 !important;
 }
-.tab-stack {
-	margin-top: 1px;
-  }
+
 
 /* ---Tabs/Tab Bar height--- */
 :root {
 	--tab-min-height: 28px !important; 
-	
+
    }
    :root #tabbrowser-tabs {
 	--tab-min-height: 28px !important; /* needs to be the same as above under :root */
 	
    } 
-   /*remove space before 1st tab*/
-   .titlebar-spacer[type="pre-tabs"] {
-    display: none !important;
-}  
 
+/* adding drag space before 1st tab */
+   :root[sizemode="normal"] .titlebar-spacer[type=pre-tabs] {
+
+	display: -moz-box !important;
+	width: 14px !important;
+	
+	}
+
+:root:not([sizemode="normal"]) .titlebar-spacer[type=pre-tabs] {
+
+	display: -moz-box !important;
+	width: 14px !important;
+	
+	}
 
    /* Fixing toolbar buttons (close/min/max) due to shoretened Menu Bar height */
    #toolbar-menubar .titlebar-button{ padding-block: 0px !important; }  
@@ -124,6 +132,7 @@
 }
 
 /* green dot on pinned tab for site update notif */
+/* in console for testing: var titlechanger = window.setInterval(function(){document.title=document.title+'0';}, 5000); */
 .tabbrowser-tab > .tab-stack >
  .tab-content[pinned][titlechanged]:not([selected="true"]){
   background-position: bottom !important;
@@ -141,11 +150,11 @@
 	margin-left: 10px !important;
 	margin-right: 10px !important;
   }
-
 /*container tab label color when selected */
   .tabbrowser-tab[selected="true"][class*="identity-color-"] .tab-label {
     color: var(--identity-tab-color) !important;
 }
+
 
 /* container tabs indicator customization - different style. this will give rounded borders if tab border radius is there 
 and covers entire bottom outline of tab. Line Position:bottom */
@@ -166,7 +175,7 @@ and covers entire bottom outline of tab. Line Position:bottom */
 #tabbrowser-tabs > .tabbrowser-arrowscrollbox{
   min-height: unset !important;
 }
-#TabsToolbar{ --toolbarbutton-inner-padding:2.5px !important; }
+#TabsToolbar{ --toolbarbutton-inner-padding: 3px !important; }
 
 
 menupopup > menuitem,
@@ -239,21 +248,6 @@ toolbarbutton {
   #urlbar[open=true] {
 	background-image: linear-gradient(to right, #9f1aff, #9f1aff, #8a46ff, #765dff, #5d7dff, #3e8cff, #1c99ff, #00a5ff, #00b4ff, #00c3ff, #00d0ff, #00ddff) !important;
   }
-
-#urlbar{
-	min-height: 26px !important; 
-	margin-block: 0px 0px!important;
-}
-#urlbar-background{
-	margin-block: 0px 0px !important;
-}
-#urlbar-container{
-	margin-block: 0px -4px;
-}
-#searchbar {
-	min-height: 26px !important;
-	margin-block: -4px !important;
-}
 
 /*toolbar buttons*/
 .toolbarbutton-1 {
@@ -344,9 +338,9 @@ toolbarbutton {
 	opacity: 1 !important;
 	}
 
-/*min max close rounded buttons and colors */
+/*min max close buttons and colors */
 	.titlebar-button {
-		border-radius: 4px !important;
+		
 		padding-left: 12px !important;
 		padding-right: 12px !important;
 	}
@@ -356,7 +350,7 @@ toolbarbutton {
 	#restore-button,
 	#close-button
 	{
-		border-radius: 4px !important;
+		
 		stroke: #00DDFF !important;
 		
 	}
@@ -372,7 +366,42 @@ toolbarbutton {
 		stroke: #FFF;
 	}
 
-/* tooltip dark theme */
+	
+/*bookmarks star in url bar removed */
+#star-button-box { display: none !important; }
+
+/* bookmarks star appear on urlbar hover */
+#urlbar:hover #star-button-box{
+    display: -moz-box !important;
+}
+
+/* to make it appear when urlbar focused and opened - uncomment below lines */
+/* #urlbar[focused=true] #star-button-box{
+    display: -moz-box !important;
+}
+
+#urlbar[open=true] #star-button-box{
+    display: -moz-box !important;
+} */
+
+/* navbar compact */
+#urlbar{
+	min-height: 26px !important; 
+	margin-block: 0px 0px!important;
+}
+#urlbar-background{
+	margin-block: 0px 0px !important;
+}
+#urlbar-container{
+	margin-block: 0px -4px;
+}
+#searchbar {
+	min-height: 26px !important;
+	margin-block: -4px !important;
+}
+
+
+/*tooltip dark theme*/
 tooltip {
 	-moz-appearance: none !important;
 	  color: #fff !important;
@@ -382,7 +411,83 @@ tooltip {
   
   }
 
-/*bookmarks star in url bar removed */
-/*#star-button-box { display: none !important; } */
+/* Download pop up and app picker window dark mode */
+@-moz-document url("chrome://mozapps/content/downloads/unknownContentType.xhtml") {
+    #unknownContentType { 
+		color: white !important;
+		background-color: #2b2a33 !important; 
+	}
+    
+	button {
 
+		-moz-appearance: none !important;
+		
+		background-color: #42414D !important;
+		
+		color: white !important;
+		
+		border: 1px solid #52525E !important;
+		border-radius: 4px !important;
+		
+		}
+		
+		button:hover {
+		
+		background-color: #5f5e6e !important;
+		border: 1px solid dodgerblue !important;	
+		}
+		
+		#openHandler {
+			-moz-appearance: none !important;
+			background: #5f5e6e !important;
+			color: white !important;
+			border: 1px solid #77758a !important;
+			border-radius: 4px !important;
+			
+		}
 
+		#openHandler:hover {
+			border: 1px solid dodgerblue !important;
+			background: #77758a !important;
+			
+			
+		}
+
+	
+		
+}
+
+@-moz-document url("chrome://global/content/appPicker.xhtml") {
+
+	#app-picker{
+		color: white !important;
+		background-color: #2b2a33 !important;
+	}
+	
+	button {
+
+		-moz-appearance: none !important;
+		
+		background-color: #42414D !important;
+		
+		color: white !important;
+		
+		border: 1px solid #52525E !important;
+		border-radius: 4px !important;
+		
+		}
+		
+		button:hover {
+		
+		background-color: #5f5e6e !important;
+		border: 1px solid dodgerblue !important;	
+		}
+
+		#app-picker-listbox{
+			-moz-appearance: none !important;
+			background-color: #2b2a33 !important;
+			color: white !important;
+			border: 1px solid #52525E !important;
+		}
+
+}
