@@ -22,3 +22,6 @@ user_pref("browser.aboutConfig.showWarning", false);
 
 //security padlock icon switch to green color icon
 user_pref("security.secure_connection_icon_color_gray", false);
+
+//disable urlbar open on click - urlbar opens only when start typing
+user_pref("browser.urlbar.suggest.topsites", false);
