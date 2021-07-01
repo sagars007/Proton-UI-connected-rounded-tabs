@@ -371,18 +371,18 @@ toolbarbutton {
 #star-button-box { display: none !important; }
 
 /* bookmarks star appear on urlbar hover */
-#urlbar:hover #star-button-box{
+  /*  #urlbar:hover #star-button-box{
     display: -moz-box !important;
-}
+} */
 
-/* to make it appear when urlbar focused and opened - uncomment below lines */
-/* #urlbar[focused=true] #star-button-box{
+/* bookmarks star appear when urlbar focused and opened  */
+ #urlbar[focused=true] #star-button-box{
     display: -moz-box !important;
 }
 
 #urlbar[open=true] #star-button-box{
     display: -moz-box !important;
-} */
+} 
 
 /* navbar compact */
 #urlbar{
