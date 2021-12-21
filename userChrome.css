@@ -222,6 +222,8 @@ toolbarbutton {
   
 }
 
+:root { --toolbar-field-focus-border-color: transparent !important; }	/*remove default focus ring of url bar */
+
 #urlbar-background,#urlbar{ 
 
 	border-radius: 4px !important;
