@@ -11,8 +11,6 @@ Tested in Firefox Nightly, windows 10
 
 How to use userChrome.css: https://www.userchrome.org/how-create-userchrome-css.html
 
-user.js file is optional. It is used to update about:config preferences.
-
 Some of the styles applied:
 * Rounded tabs connected to nav-bar with nightly color gradient active indicator
 * Compact mode reduced height
