@@ -7,7 +7,7 @@ Now with download popup & appPicker in dark mode!
 
 Displays best with proton dark compact mode
 
-Tested in Firefox Nightly, windows 10
+Tested in Firefox Nightly 89, windows 10
 
 How to use userChrome.css: https://www.userchrome.org/how-create-userchrome-css.html
 
