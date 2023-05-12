@@ -66,14 +66,14 @@
 /* adding drag space before 1st tab */
    :root[sizemode="normal"] .titlebar-spacer[type=pre-tabs] {
 
-	display: -moz-box !important;
+	display: flex !important;
 	width: 14px !important;
 	
 	}
 
 :root:not([sizemode="normal"]) .titlebar-spacer[type=pre-tabs] {
 
-	display: -moz-box !important;
+	display: flex !important;
 	width: 14px !important;
 	
 	}
@@ -124,7 +124,7 @@
 
   /* show close tab button on tab hover but not on pinned tab */
   .tabbrowser-tab:hover .tab-close-button { 
-      display: -moz-box !important; 
+      display: flex !important; 
   }
 
   .tabbrowser-tab[pinned]:hover .tab-close-button { 
@@ -145,7 +145,7 @@
 
 /*container tabs indicator customization. Line Position:bottom Default style */
 .tab-context-line{
-	-moz-box-ordinal-group: 2;
+	order: 2;
 	margin-block: 0 !important;
 	margin-left: 10px !important;
 	margin-right: 10px !important;
@@ -374,16 +374,16 @@ toolbarbutton {
 
 /* bookmarks star appear on urlbar hover */
   /*  #urlbar:hover #star-button-box{
-    display: -moz-box !important;
+    display: flex !important;
 } */
 
 /* bookmarks star appear when urlbar focused and opened  */
  #urlbar[focused=true] #star-button-box{
-    display: -moz-box !important;
+    display: flex !important;
 }
 
 #urlbar[open=true] #star-button-box{
-    display: -moz-box !important;
+    display: flex !important;
 } 
 
 /* navbar compact */
