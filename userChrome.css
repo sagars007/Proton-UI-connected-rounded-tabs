@@ -14,7 +14,7 @@
 	--uc-autohide-toolbar-hover-rotation: 0deg; /* cursor is over the toolbar area */
   }
   
-  :root[uidensity="compact"] #PersonalToolbar{ --uc-bm-padding: 1px }
+  :root[uidensity="compact"] #PersonalToolbar{ --uc-bm-padding: 25px }
   :root[uidensity="touch"] #PersonalToolbar{ --uc-bm-padding: 7px }
   
   #PersonalToolbar:not([customizing]){
@@ -67,14 +67,14 @@
    :root[sizemode="normal"] .titlebar-spacer[type=pre-tabs] {
 
 	display: flex !important;
-	width: 14px !important;
+	width: 3px !important;
 	
 	}
 
 :root:not([sizemode="normal"]) .titlebar-spacer[type=pre-tabs] {
 
 	display: flex !important;
-	width: 14px !important;
+	width: 3px !important;
 	
 	}
 
@@ -231,16 +231,16 @@ toolbarbutton {
   }
   
   #urlbar[focused=true] #urlbar-background{ 
-	margin-bottom: 2px !important;
-	margin-top: 2px !important;
-	margin-left: 2px !important;
-	margin-right: 2px !important; }
+	margin-bottom: 1px !important;
+	margin-top: 1px !important;
+	margin-left: 1px !important;
+	margin-right: 1px !important; }
 
 	#urlbar[open=true] #urlbar-background{ 
-		margin-bottom: 2px !important;
-		margin-top: 2px !important;
-		margin-left: 2px !important;
-		margin-right: 2px !important; }
+		margin-bottom: 1px !important;
+		margin-top: 1px !important;
+		margin-left: 1px !important;
+		margin-right: 1px !important; }
  
   
   #urlbar[focused=true] {
@@ -253,36 +253,36 @@ toolbarbutton {
 
 /*toolbar buttons*/
 .toolbarbutton-1 {
-	fill: #9f1aff !important;
+	fill: #ffffff !important;
   }
   
   .toolbarbutton-1:hover {
-	fill: #00DDFF !important;
+	fill: #AAB0AD !important;
   }
   
   .toolbarbutton-1[open="true"] {
-	fill: #00DDFF !important;
+	fill: #ffffff !important;
   }
   
   .toolbarbutton-1[disabled] {
-	fill: #652299 !important;
+	fill: #737477 !important;
   }
    
   /*contextmenu right-click pg*/
   #context-navigation menuitem {
-	color: #9f1aff !important;
+	color: #ffffff !important;
   }
 
   #context-navigation menuitem[disabled] {
-	color: #652299 !important;
+	color: #737477 !important;
   }
 
   #context-navigation menuitem:hover {
-	color: #00DDFF !important;
+	color: #AAB0AD !important;
   }
 
   #context-navigation menuitem:hover[disabled] {
-	color: #652299 !important;
+	color: #737477 !important;
   } 
 
   .close-icon:hover {
@@ -343,8 +343,8 @@ toolbarbutton {
 /*min max close buttons and colors */
 	.titlebar-button {
 		
-		padding-left: 12px !important;
-		padding-right: 12px !important;
+		padding-left: 3px !important;
+		padding-right: 3px !important;
 	}
 
 	:root[sizemode=fullscreen]
@@ -388,7 +388,7 @@ toolbarbutton {
 
 /* navbar compact */
 #urlbar{
-	min-height: 26px !important; 
+	min-height: 35px !important; 
 	margin-block: 0px 0px!important;
 }
 #urlbar-background{
@@ -398,7 +398,7 @@ toolbarbutton {
 	margin-block: 0px -4px;
 }
 #searchbar {
-	min-height: 26px !important;
+	min-height: 35px !important;
 	margin-block: -4px !important;
 }
 
